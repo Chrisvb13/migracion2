@@ -1,0 +1,47 @@
+managed implementation in class ZBP_R_CENTRO2_CVB unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_CENTRO2_CVB alias ZrCentro2Cvb
+persistent table ZCENTRO2_CVB
+draft table ZCENTRO2_CVB_D
+etag master LocalLastChanged
+lock master total etag LastChanged
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   IdCentro;
+
+  field ( readonly )
+   LocalLastChanged,
+   LastChanged,
+   UserCreate,
+   UserLastChange;
+
+  field ( readonly : update )
+   IdCentro;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZCENTRO2_CVB
+  {
+    IdCentro = id_centro;
+    NombreCentro = nombre_centro;
+    Poblacion = poblacion;
+    Provincia = provincia;
+    Email = email;
+    LocalLastChanged = local_last_changed;
+    LastChanged = last_changed;
+    UserCreate = user_create;
+    UserLastChange = user_last_change;
+  }
+}

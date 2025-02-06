@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_CENTRO2_CVB'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_CENTRO2_CVB'
+  }
+}
+define service ZUI_CENTRO2_CVB_O4 provider contracts odata_v4_ui {
+  expose ZC_CENTRO2_CVB;
+}

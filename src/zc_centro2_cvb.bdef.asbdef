@@ -1,0 +1,17 @@
+projection implementation in class ZBP_C_CENTRO2_CVB unique;
+strict ( 2 );
+use draft;
+define behavior for ZC_CENTRO2_CVB alias ZcCentro2Cvb
+use etag
+
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+}
